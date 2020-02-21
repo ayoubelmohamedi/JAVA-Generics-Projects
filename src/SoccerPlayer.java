@@ -1,5 +1,5 @@
 
-public class SoccerPlayer extends Player {
+public abstract class SoccerPlayer extends Player {
 
 	public SoccerPlayer(String name) {
 		super(name);

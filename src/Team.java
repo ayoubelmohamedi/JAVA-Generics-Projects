@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 
+//You can see that this class, extends all classes of type player .
 public class Team<T extends Player> implements Comparable<Team <T>>{
 	private String name;
 	int played = 0;
 	int won = 0;
 	int lost =0;
 	int tied = 0;
-	
+	// creating a private arrayList of type (T) which will store the players of one type of team(EXAMPLE: football)
 	private ArrayList<T> members = new ArrayList<>();
 	
 	public Team(String name) {
@@ -16,7 +17,7 @@ public class Team<T extends Player> implements Comparable<Team <T>>{
 	public String getName() {
 		return name;
 	}
-	
+	//if player already exist then tell me ,else save the player in the team.
 	public boolean addPlayer(T player) {
 		if (members.contains(player)) {
 			System.out.println(player.getName()+" is already on the team!");
@@ -31,7 +32,7 @@ public class Team<T extends Player> implements Comparable<Team <T>>{
 	public int numPlayers() {
 		return this.members.size();
 	}
-	
+	//give you the result between two teams. 
 	public void matchResult(Team<T> opponent,int ourScore,int theirScore) {
 		String message ;
 		if (ourScore > theirScore) {
@@ -73,9 +74,5 @@ public class Team<T extends Player> implements Comparable<Team <T>>{
 			return 0;
 		}
 	}
-
-	
-	
-	
 	
 }
